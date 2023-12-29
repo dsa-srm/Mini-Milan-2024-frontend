@@ -1,4 +1,4 @@
-const VAR = "http://localhost:5000";
+const VAR = "https://api.srmmilan.org";
 
 //https://api.srmmilan.org
 //http://localhost:5000
