@@ -16,22 +16,11 @@ interface IRegisterUserObject {
 }
 
 export async function getCurrentUser() {
-	const token =
-		document.cookie
-			.split(";")
-			.find((item) => item.includes("token"))
-			?.split("=")[1] || null; // get token from cookie
-
-	if (!token) return null;
-
 	const response = await fetch(getCurrentUserApi, {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${token}`,
-		},
+		credentials: "include",
 	});
 	const data = await response.json();
-	const res = data.data.user;
+	const res = data?.data?.user;
 	return res;
 }
 
@@ -41,19 +30,8 @@ export async function getCurrentUser() {
 // }
 
 export async function deleteUser(id: string) {
-	const token =
-		document.cookie
-			.split(";")
-			.find((item) => item.includes("token"))
-			?.split("=")[1] || null; // get token from cookie
-
-	if (!token) return null;
-
 	await fetch(`${deleteUserApi}${id}`, {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${token}`,
-		},
+		credentials: "include",
 		method: "DELETE",
 	});
 	return;
@@ -70,7 +48,7 @@ export async function loginUser(email: string, password: string) {
 	});
 
 	const data = await response.json();
-	const res = data.data.user;
+	const res = data?.data?.user;
 	return res;
 }
 
@@ -85,6 +63,6 @@ export async function registerUser(userObj: IRegisterUserObject) {
 	});
 
 	const data = await response.json();
-	const res = data.data.user;
+	const res = data?.data?.user;
 	return res;
 }
