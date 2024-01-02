@@ -1,0 +1,31 @@
+.glass_box {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	padding: 1.5rem;
+	height: 34rem;
+	justify-content: end;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	background-image: linear-gradient(
+		to bottom right,
+		rgba(255, 255, 255, 0.2),
+		rgba(255, 255, 255, 0)
+	);
+	backdrop-filter: blur(7px);
+	box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.1);
+	border-left: solid 1px rgba(255, 255, 255, 0.3);
+	border-top: solid 1px rgba(255, 255, 255, 0.8);
+}
+
+.glass_box_clip {
+	background-color: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 100%;
+	transform: scale(1.8) translateY(1rem) translateX(0.5rem);
+	color: white;
+	position: absolute;
+	top: 0;
+	clip-path: polygon(0 0, 100% 0, 69% 28%, 28% 34%);
+}
