@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ProtectedRoutes } from "./features/Authentication/ProtectedRoutes";
 import Login from "./components/Authentication/Login";
+import SignUp from "./components/Authentication/Signup";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -22,6 +23,7 @@ function App() {
 						<Route path="/dashboard" element={<Dashboard />} />
 					</Route>
 					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<SignUp />} />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
