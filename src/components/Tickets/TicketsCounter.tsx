@@ -1,4 +1,4 @@
-import useTickets from "@/features/Bookings/useTickets";
+import useTickets from "@/features/Bookings/useFindTickets";
 import { useEffect, useState } from "react";
 import { AnimatedCounter } from "react-animated-counter";
 import { HiOutlineTicket } from "react-icons/hi";

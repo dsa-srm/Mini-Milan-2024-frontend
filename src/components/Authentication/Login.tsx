@@ -3,7 +3,7 @@ import useLogin from "@/features/Authentication/useLogin";
 const Login = () => {
 	const { isLoading, login } = useLogin();
 
-	const data = { email: "js4821@srmist.edu.in", password: "secretpassword" };
+	const data = { email: "jd4821@srmist.edu.in", password: "secretpassword" };
 
 	function handleLogin() {
 		login(data);

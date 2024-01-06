@@ -1,7 +1,7 @@
 import { getTicketCount } from "@/services/apiBooking";
 import { useQuery } from "react-query";
 
-const useTickets = () => {
+const useFindTickets = () => {
 	const { isLoading, data: tickets } = useQuery({
 		queryKey: ["tickets"],
 		queryFn: () => getTicketCount(),
@@ -12,4 +12,4 @@ const useTickets = () => {
 	return { isLoading, tickets };
 };
 
-export default useTickets;
+export default useFindTickets;
