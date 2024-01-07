@@ -18,7 +18,7 @@ const UserDetailsBox = () => {
 	if (isLoading) return <div>Loading...</div>;
 
 	return (
-		<GlassBox>
+		<GlassBox >
 			<BoxRow field="Name" value={user.name} icon={<IoPerson />} wrap={24} />
 			<BoxRow
 				field="Registration Number"

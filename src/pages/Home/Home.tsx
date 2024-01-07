@@ -3,6 +3,9 @@ import "./Home.css";
 import mountains from "../../assets/Images/heroMountains.png";
 import stars from "../../assets/Images/stars.png";
 function Home() {
+
+  
+
   return (
     <div
     className="h-[200vh] w-[100vw] homeContainer "
