@@ -1,6 +1,5 @@
 
 import "./Home.css";
-// import grains from "../../assets/Images/grains.png";
 import mountains from "../../assets/Images/heroMountains.png";
 import stars from "../../assets/Images/stars.png";
 function Home() {
@@ -8,7 +7,7 @@ function Home() {
     <div
     className="h-[200vh] w-[100vw] homeContainer "
     >
-      {/* <img className="w-[100%] h-[100%]  " src={grains}></img> */}
+    
 <section className="w-[100vw] h-[100vh] relative">
     <p className=" heroHead font-[Alinsa] text-[15rem] text-white leading-[80%] text-center pt-[300px] relative z-[1] "> MINI MILAN </p>
  
