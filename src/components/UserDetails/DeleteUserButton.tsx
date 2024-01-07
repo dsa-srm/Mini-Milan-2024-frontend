@@ -35,7 +35,7 @@ const DeleteUserButton = () => {
 			description: "Something went wrong",
 		
 		});
-	}y
+	}
   }
 
   return (

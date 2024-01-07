@@ -28,7 +28,7 @@ const SignIn: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-[#130c1a] loginPageContainer ">
-      <div className="max-w-full w-[90vw] md:w-4/6 lg:max-w-[500px]  shadow-lg p-6 space-y-6 relative z-[1] border-4 loginBox ">
+      <div className="max-w-full w-[90vw] md:w-4/6 lg:max-w-[500px]  shadow-lg p-6 space-y-6 relative z-[1] border-4  ">
        
         <h2 className="text-[3rem] font-['unbounded',sans-serif] md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
           Sign In
