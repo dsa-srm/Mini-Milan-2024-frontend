@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm} from 'react-hook-form';
+import Navbar from '../Header/Navbar';
+
 
 
 interface SignUpForm {
@@ -21,10 +23,13 @@ const SignUp: React.FC = () => {
     console.log(data);
     // Your form submission logic here
   };
-
   return (
-    <div className="flex justify-center items-center h-screen bg-[#130c1a]">
-      <div className="max-w-full w-9/12 md:w-4/6 lg:w-4/6 bg-[#28242f] rounded-xl shadow-lg p-6 space-y-6">
+
+    
+    
+    <div className="flex justify-center items-center h-screen bg-[#130c1a] lg:pt-32 lg:pb-32 overflow-auto">
+    <Navbar/>   
+      <div className="lg:mt-28  max-w-full w-9/12 md:w-4/6 lg:w-4/6 bg-[#28242f] rounded-xl shadow-lg p-6 space-y-6">
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">Register</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Name Field */}

@@ -100,7 +100,7 @@ const onSubmit = async (data: SignInForm) => {
           <div className="text-center">
             <p className="text-slate-100">
               Don't have an account?
-              <a href="/register" className="text-blue-500 hover:text-blue-700 ml-2">Register.</a>
+              <a href="/signup" className="text-blue-500 hover:text-blue-700 ml-2">Register.</a>
             </p>
           </div>
         </form>

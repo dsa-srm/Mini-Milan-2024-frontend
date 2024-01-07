@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header/Navbar";
 import DashboardBody from "./DashboardBody";
 import DashboardTickets from "./DashboardTickets";
 
