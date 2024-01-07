@@ -22,6 +22,7 @@
     "@tanstack/react-query-devtools": "^5.15.0",
     "@types/react-query": "^1.2.9",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.302.0",

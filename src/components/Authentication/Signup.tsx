@@ -46,9 +46,10 @@ const SignUp: React.FC = () => {
             <input
               type="email"
               {...register("email", {
-                required: "Email is required",
+                required: "SRM Email is required",
                 pattern: {
-                  value: /^\S+@\S+\.\S+$/,
+                  value: /^[a-zA-Z0-9._%+-]+@srmist\.edu\.in$/
+                  ,
                   message: "Invalid email address"
                 }
               })}

@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ProtectedRoutes } from "./features/Authentication/ProtectedRoutes";
 import Login from "./components/Authentication/Login";
 import SignUp from "./components/Authentication/Signup";
+import Header from "./components/Header/Header";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -17,6 +18,8 @@ function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<BrowserRouter>
+			<Header/>
+
 				<Routes>
 					<Route element={<ProtectedRoutes />}>
 						<Route index element={<Navigate to="/dashboard" />} />

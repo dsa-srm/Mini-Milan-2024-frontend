@@ -2,6 +2,7 @@ import {
 	deleteUserApi,
 	getCurrentUserApi,
 	loginUserApi,
+	logoutUserApi,
 	registerUserApi,
 } from "@/Api/ApiRoutes";
 
@@ -45,6 +46,19 @@ export async function loginUser(email: string, password: string) {
 		},
 		credentials: "include",
 		body: JSON.stringify({ email, password }),
+	})
+
+	const data = await response.json();
+	
+	return data;
+}
+export async function logoutUser() {
+	const response = await fetch(logoutUserApi, {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		credentials: "include",
 	});
 
 	const data = await response.json();

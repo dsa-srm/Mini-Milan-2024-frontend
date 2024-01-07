@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Archivo+Black&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -91,31 +96,14 @@ html {
 
 body {
 	font-family: "Manrope", sans-serif;
-	font-weight: 400;
-	line-height: 1.6;
+	
 }
 
-label {
-	font-size: 1.6rem;
-	font-weight: 600;
-}
 
-input,
-textarea {
-	width: 100%;
-	padding: 0.8rem 1.2rem;
-	font-family: inherit;
-	font-size: 1.6rem;
-	border: none;
-	border-radius: 5px;
-	background-color: var(--color-light--3);
-	transition: all 0.2s;
-}
 
-input:focus {
-	outline: none;
-	background-color: #fff;
-}
+
+
+
 
 .cta,
 .cta:link,
@@ -141,3 +129,46 @@ input:focus {
     "description": "Import CSS Module as `styles`"
   },
 */
+
+.loginPageContainer{
+	background: rgb(131,58,180);
+	background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	/* background: linear-gradient(180deg, #320045 23.48%, #FF7B4B 60.83%, #FCB045 80.1%, #C92B44 100%); */
+
+}
+
+.loginPageContainer::after{
+	content: "";
+	position: absolute;
+	/* z-index: 0; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: url("./assets/Images/noise.png"), rgba(246, 0, 0, 0.081) 0% 0% / 100px 100px repeat;
+	image-rendering: pixelated;
+	/* mix-blend-mode: soft-light; */
+}
+
+.headerLogo{
+	font-family: 'unbounded', sans-serif;
+	font-size: 4rem;
+	color: var(--color-light--1);
+}
+
+.headerContainer{
+	background: rgb(253,29,29);
+  background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+  }
+  .headerContainer::after{
+	content: "";
+	position: absolute;
+	/* z-index: 0; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("./assets/Images/noise.png"), rgba(246, 0, 0, 0.081) 0% 0% / 100px 100px repeat;
+	image-rendering: pixelated;
+	/* mix-blend-mode: soft-light; */
+}
