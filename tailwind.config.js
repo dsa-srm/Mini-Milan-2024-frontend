@@ -84,6 +84,23 @@ export const theme = {
 			mm_lg: "8rem",
 			mm_esm: "2rem",
 		},
+		fontFamily: {
+			alinsa: ['alinsa'], // Create a new utility name
+		  },
+		
+		  backgroundPosition: {
+			bottom: 'bottom',
+			'bottom-4': 'center bottom 100rem',
+			center: 'center',
+			left: 'left',
+			'left-bottom': 'left bottom',
+			'left-top': 'left top',
+			right: 'right',
+			'right-bottom': 'right bottom',
+			'right-top': 'right top',
+			top: 'top',
+			'top-4': 'center top 1rem',
+		  }
 	},
 };
 export const plugins = [require("tailwindcss-animate")];

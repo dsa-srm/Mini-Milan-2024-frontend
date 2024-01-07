@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../../assets/react.svg'; // Import your logo here
+import Logo from '../../assets/navLogo.png'; // Import your logo here
 import HamburgerIcon from '../../assets/hamburger.svg';
 import CloseIcon from '../../assets/close.svg';
 
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 w-full bg-transparent text-white p-4 px-10 lg:mb-32 flex justify-between items-center z-50">
-      <img src={Logo} alt="Logo" className="h-16" />
+      <img src={Logo} alt="Logo" className=" h-12 lg:h-28" />
       <div className="hidden md:flex items-center md:text-2xl">
         {navLink}
         <button

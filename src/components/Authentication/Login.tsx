@@ -1,6 +1,7 @@
 // import useLogin from "@/features/Authentication/useLogin";
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Navbar from '../Header/Navbar';
 
 interface SignInForm {
   email: string;
@@ -47,7 +48,9 @@ const onSubmit = async (data: SignInForm) => {
 
 
   return (
+	
     <div className="flex justify-center items-center h-screen bg-[#130c1a]">
+		<Navbar/>
       <div className="max-w-full w-md md:w-4/6 lg:w-4/6 bg-[#28242f] rounded-xl shadow-lg p-6 space-y-6">
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">Sign In</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+	font-family: 'alinsa';
+	src: url('../src/assets/fonts/alinsa.otf') format('opentype');
+}
 @layer base {
 	:root {
 	  --background: 0 0% 100%;
@@ -141,3 +145,4 @@ input:focus {
     "description": "Import CSS Module as `styles`"
   },
 */
+
