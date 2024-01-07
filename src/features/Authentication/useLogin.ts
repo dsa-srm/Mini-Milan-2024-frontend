@@ -2,7 +2,7 @@
 import { useQueryClient, useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "@/services/apiUser";
-import React from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 interface LoginProps {
   email: string;
@@ -11,23 +11,51 @@ interface LoginProps {
 
 const useLogin = () => {
   const navigate = useNavigate();
-  const [loginError, setLoginError] = React.useState<any>(null);
   const queryClient = useQueryClient();
 
+
+  const{toast} = useToast();
   const { isLoading, mutate: login } = useMutation({
-    mutationFn: ({ email, password }: LoginProps) => loginUser(email, password),
+    mutationFn:async ({ email, password }: LoginProps) => await loginUser(email, password),
     onSuccess: (userData: any) => {
-      queryClient.setQueryData(["user"], userData?.data?.user);
-      navigate("/dashboard", { replace: true });
+		if(userData.success){
+
+			queryClient.setQueryData(["user"], userData?.data?.user);
+			toast({
+				variant:"success",
+				title: "Login Success",
+				description: "You have logged in successfully",
+			})
+			localStorage.setItem("isAuth", "true");
+			navigate("/dashboard", { replace: true });
+		}
+		else{
+			if(userData.message_code==="USER_NOT_FOUND"){
+				toast({
+					variant:"error",
+					title: "Login Failed",
+					description: "User does not exist. Please Signup First,",
+				})
+				navigate("/signup", { replace: true });
+			}else{
+
+				toast({
+					variant:"error",
+					title: "Login Failed",
+					description: userData.message,
+				})
+			}
+		}
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onError: (error: any) => {
-      setLoginError(error);
+		
+
       console.log(error);
     },
   });
 
-  return { isLoading, loginError, login };
+  return { isLoading,login };
 };
 
 export default useLogin;

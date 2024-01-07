@@ -5,6 +5,7 @@ import { ProtectedRoutes } from "./features/Authentication/ProtectedRoutes";
 import Login from "./components/Authentication/Login";
 import SignUp from "./components/Authentication/Signup";
 import Header from "./components/Header/Header";
+import { Toaster } from "@/components/ui/toaster"
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/signup" element={<SignUp />} />
 				</Routes>
 			</BrowserRouter>
+				<Toaster/>	
 		</QueryClientProvider>
 	);
 }

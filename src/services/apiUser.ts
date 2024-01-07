@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-	deleteUserApi,
-	getCurrentUserApi,
-	loginUserApi,
-	logoutUserApi,
-	registerUserApi,
+  deleteUserApi,
+  getCurrentUserApi,
+  loginUserApi,
+  logoutUserApi,
+  registerUserApi,
 } from "@/Api/ApiRoutes";
 
 interface IRegisterUserObject {
@@ -13,16 +14,18 @@ interface IRegisterUserObject {
 	reg_number: string;
 	is_ktr_student: boolean;
 	gender: string;
-	phone_number: string;
+	phone_number: number;
+
+
 }
 
 export async function getCurrentUser() {
-	const response = await fetch(getCurrentUserApi, {
-		credentials: "include",
-	});
-	const data = await response.json();
-	const res = data?.data?.user;
-	return res;
+  const response = await fetch(getCurrentUserApi, {
+    credentials: "include",
+  });
+  const data = await response.json();
+  const res = data?.data?.user;
+  return res;
 }
 
 // async function getUser(id: string) {
@@ -31,52 +34,60 @@ export async function getCurrentUser() {
 // }
 
 export async function deleteUser(id: string) {
-	await fetch(`${deleteUserApi}${id}`, {
-		credentials: "include",
-		method: "DELETE",
-	});
-	return;
+  await fetch(`${deleteUserApi}${id}`, {
+    credentials: "include",
+    method: "DELETE",
+  });
+  return;
 }
 
 export async function loginUser(email: string, password: string) {
-	const response = await fetch(loginUserApi, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		credentials: "include",
-		body: JSON.stringify({ email, password }),
-	})
+  try {
+    const response = await fetch(loginUserApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ email, password }),
+    });
 
-	const data = await response.json();
-	
-	return data;
+    const data = await response.json();
+    return data;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 }
-export async function logoutUser() {
-	const response = await fetch(logoutUserApi, {
-		method: "GET",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		credentials: "include",
-	});
 
-	const data = await response.json();
-	const res = data?.data?.user;
-	return res;
+export async function logoutUser() {
+  const response = await fetch(logoutUserApi, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+
+  const data = await response.json();
+  const res = data?.data?.user;
+  return res;
 }
 
 export async function registerUser(userObj: IRegisterUserObject) {
-	const response = await fetch(registerUserApi, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		credentials: "include",
-		body: JSON.stringify(userObj),
-	});
+  try {
+	console.log("inside register user");
+    const response = await fetch(registerUserApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify(userObj),
+    });
 
-	const data = await response.json();
-	const res = data?.data?.user;
-	return res;
+    const data = await response.json();
+    return data;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 }
