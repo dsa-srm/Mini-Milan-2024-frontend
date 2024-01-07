@@ -1,0 +1,45 @@
+
+
+
+.homeContainer{
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    background: linear-gradient(180deg, #320045 23.48%, #FF7B4B 60.83%, #FCB045 80.1%, #C92B44 100%);
+    /* url("../../assets/Images/grains.png"); */
+    /* background: url("../../assets/Images/grains.png"), lightgray 0% 0% / 100px 100px repeat; */
+    /* mix-blend-mode: soft-light; */
+}
+
+/* .heroHead{
+    background: url("../../assets/Images/textBackground.svg"), lightgray 50%  ;
+    background-repeat: no-repeat;
+    background-size: 100vw  ;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+.heroHead {
+    animation: MoveUpDown 2s linear infinite;
+    /* position: absolute;
+    left: 0;
+    bottom: 0; */
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+-webkit-text-stroke-width: 0px;
+-webkit-text-stroke-color: rgb(255, 254, 254);
+}
+  
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
