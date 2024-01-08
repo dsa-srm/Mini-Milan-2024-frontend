@@ -1,10 +1,10 @@
 const artistsData = [
     {
-      name: 'Siana Catherine',
+      name: 'DJ Siana Catherine',
       imageUrl: '/src/assets/siana2.png',
     },
     {
-      name: 'Gowtham',
+      name: 'DJ Gowtham',
       imageUrl: '/src/assets/gowtham.png',
     },
   ];

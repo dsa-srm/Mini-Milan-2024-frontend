@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../../assets/navLogo.png'; // Import your logo here
 import HamburgerIcon from '../../assets/hamburger.svg';
 import CloseIcon from '../../assets/close.svg';
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar: React.FC = () => {
     // Check if user token exists in session storage
     const token = sessionStorage.getItem('userToken');
     setIsLoggedIn(!!token);
-    setButtonText(token ? 'Dashboard' : 'Buy Ticket!');
+    setButtonText(token ? 'Dashboard' : 'BUY TICKET!');
   }, []);
 
   const handleButtonClick = () => {
@@ -41,7 +42,7 @@ const Navbar: React.FC = () => {
         {navLink}
         <button
           onClick={handleButtonClick}
-          className="bg-orange-500 hover:bg-orange-300 text-white font-bold py-2 px-4 rounded ml-4"
+          className="button  text-white text-2xl tracking-wide py-2 px-4 rounded-xl ml-4 "
         >
           {buttonText}
         </button>
