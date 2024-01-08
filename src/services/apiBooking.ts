@@ -7,6 +7,7 @@ export interface IRegisterUserObject {
 	ticketType: string;
 	name: string;
 	ticketPrice: string;
+	userId: string;
 }
 
 export async function getTicketCount() {
@@ -24,7 +25,6 @@ export async function bookTicket(bodyObj: IRegisterUserObject) {
 		headers: {
 			"Content-Type": "application/json",
 		},
-		credentials: "include",
 		body: JSON.stringify(bodyObj),
 	});
 

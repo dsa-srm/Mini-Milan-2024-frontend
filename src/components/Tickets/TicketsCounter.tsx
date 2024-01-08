@@ -14,9 +14,9 @@ const TicketsCounter = () => {
 	}, [tickets, isLoading]);
 
 	return (
-		<div className="flex gap-8 divide-x-2 divide-dotted divide-slate-50">
-			<p className="text-bold text-white text-[30px]">
-				<HiOutlineTicket /> Tickets Left !
+		<div className="flex items-center justify-center max-w-fit gap-x-4 px-[20px]  mt-[50px]  ">
+			<p className="flex items-center justify-center text-bold text-white text-[4rem] font-bold font-['unbounded',sans-serif] gap-x-2  ">
+				<HiOutlineTicket size={48} /> Tickets Left : 
 			</p>
 			<AnimatedCounter
 				value={counterValue}

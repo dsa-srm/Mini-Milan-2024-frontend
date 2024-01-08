@@ -5,8 +5,8 @@ const useFindTickets = () => {
 	const { isLoading, data: tickets } = useQuery({
 		queryKey: ["tickets"],
 		queryFn: () => getTicketCount(),
-		staleTime: 20000,
-		refetchInterval: 20000,
+		staleTime: 60000,
+		refetchInterval: 60000,
 	});
 
 	return { isLoading, tickets };

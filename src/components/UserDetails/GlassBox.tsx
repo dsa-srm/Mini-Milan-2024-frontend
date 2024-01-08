@@ -1,6 +1,7 @@
 import { useUserContext } from "@/features/Authentication/ProtectedRoutes";
 import "./GlassBox.css";
 import Avatar, { genConfig } from "react-nice-avatar";
+import { useMemo } from "react";
 
 interface GlassBoxProps {
 	children: React.ReactNode;
@@ -9,19 +10,21 @@ interface GlassBoxProps {
 const GlassBox = ({ children }: GlassBoxProps) => {
 	const user = useUserContext();
 
-	const config = genConfig({
-		sex: `${user === "male" ? "man" : "woman"}`,
-		hairStyle: "normal",
-	});
+	const config = useMemo(() => {
+		return genConfig({
+			sex: `${user === "male" ? "man" : "woman"}`,
+			hairStyle: "normal",
+		});
+	}, [user]);
 
 	return (
-		<div className="glass_box">
-			<div className="glass_box_clip" />
+		<div className=" max-w-[45rem] border-2 py-[20px] m-auto ">
+			<div className=" flex flex-col justify-center items-center space-y-6   " />
 			<Avatar
-				className="w-40 h-40 absolute top-10 left-6 ring-white ring-2 ring-offset-2"
+				className="w-40 h-40 ring-white ring-2 ring-offset-2 m-[20px]  "
 				{...config}
 			/>
-			<div className="flex gap-4 flex-col">{children}</div>
+			<div className="flex gap-y-3 flex-col mx-[20px]   ">{children}</div>
 		</div>
 	);
 };
