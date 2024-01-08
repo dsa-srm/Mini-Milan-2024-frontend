@@ -2,6 +2,7 @@
 import { useToast } from "@/components/ui/use-toast";
 import { registerUser } from "@/services/apiUser";
 import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 interface registerProps {
   name: string;
@@ -14,6 +15,7 @@ interface registerProps {
 }
 
 const useRegister = () => {
+  const navigate = useNavigate();
 
   const { toast } = useToast();
   const { mutate: signupUser, isLoading } = useMutation({
@@ -42,8 +44,8 @@ const useRegister = () => {
           title: "Register Success",
           description: "You have Registered successfully",
         });
-     
-	
+
+        navigate("/login", { replace: true });
       } else {
         if (userData.message_code === "EMAIL_OR_PHONE_NUMBER_REQUIRED") {
           toast({

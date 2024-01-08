@@ -8,24 +8,26 @@ import {
 } from "@/Api/ApiRoutes";
 
 interface IRegisterUserObject {
-	name: string;
-	email: string;
-	password: string;
-	reg_number: string;
-	is_ktr_student: boolean;
-	gender: string;
-	phone_number: number;
-
-
+  name: string;
+  email: string;
+  password: string;
+  reg_number: string;
+  is_ktr_student: boolean;
+  gender: string;
+  phone_number: number;
 }
 
 export async function getCurrentUser() {
-  const response = await fetch(getCurrentUserApi, {
-    credentials: "include",
-  });
-  const data = await response.json();
-  const res = data?.data?.user;
-  return res;
+  try {
+    const response = await fetch(getCurrentUserApi, {
+      credentials: "include",
+    });
+    const data = await response.json();
+    const res = data?.data?.user;
+    return res;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 }
 
 // async function getUser(id: string) {
@@ -75,7 +77,7 @@ export async function logoutUser() {
 
 export async function registerUser(userObj: IRegisterUserObject) {
   try {
-	console.log("inside register user");
+    console.log("inside register user");
     const response = await fetch(registerUserApi, {
       method: "POST",
       headers: {

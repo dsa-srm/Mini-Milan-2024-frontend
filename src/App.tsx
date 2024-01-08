@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/toaster"
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
-			staleTime: 5,
+			staleTime: Infinity,
 		},
 	},
 });

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useToast } from "../ui/use-toast";
 import useRegister from "@/features/Authentication/useRegister";
-import { useNavigate } from "react-router-dom";
+
 
 interface SignUpForm {
   name: string;
@@ -17,7 +17,6 @@ interface SignUpForm {
 }
 
 const SignUp: React.FC = () => {
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -38,8 +37,8 @@ const SignUp: React.FC = () => {
     }
     try {
       signupUser(data);
-      navigate("/dashboard");
-      localStorage.setItem("isAuth", "true");
+    
+      localStorage.setItem("isAuth", "false");
       // console.log(data);
     } catch (error) {
       console.error("Signup error:", error);
