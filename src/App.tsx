@@ -5,7 +5,8 @@ import { ProtectedRoutes } from "./features/Authentication/ProtectedRoutes";
 import Login from "./components/Authentication/Login";
 import SignUp from "./components/Authentication/Signup";
 import Header from "./components/Header/Header";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import Faq from "./pages/FAQs/Faq";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -19,18 +20,19 @@ function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<BrowserRouter>
-			<Header/>
+				<Header />
 
 				<Routes>
 					<Route element={<ProtectedRoutes />}>
 						<Route index element={<Navigate to="/dashboard" />} />
 						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/faq" element={<Faq />} />
 					</Route>
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<SignUp />} />
 				</Routes>
 			</BrowserRouter>
-				<Toaster/>	
+			<Toaster />
 		</QueryClientProvider>
 	);
 }
