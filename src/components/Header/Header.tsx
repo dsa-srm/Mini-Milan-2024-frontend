@@ -53,16 +53,27 @@ const Header = () => {
               size={"custom"}
               onClick={() => navigate("/login")}
             >
-              Login
+              Login/signup
             </Button>
           )}
-          <Button
-            variant={"custom"}
-            size={"custom"}
-            onClick={() => navigate("/dashboard")}
-          >
-            Dashboard
-          </Button>
+          {isAuth === "true" ? (
+            <Button
+              variant={"custom"}
+              size={"custom"}
+              onClick={() => navigate("/dashboard")}
+            >
+              Dashboard
+            </Button>
+          ) : (
+            <Button
+              variant={"custom"}
+              size={"custom"}
+              onClick={() => navigate("/signup")}
+            >
+              Buy Ticket
+            </Button>
+          )}
+        
         </div>
       </div>
     </header>
