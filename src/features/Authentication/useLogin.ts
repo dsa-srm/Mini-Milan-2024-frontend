@@ -18,8 +18,8 @@ const useLogin = () => {
 			queryClient.setQueryData(["user"], userData);
 			navigate("/dashboard", { replace: true });
 		},
-		onError: (error: Error) => {
-			console.log(error);
+		onError: () => {
+			console.log("Error");
 		},
 	});
 
