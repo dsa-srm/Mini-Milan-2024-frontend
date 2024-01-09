@@ -1,17 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Navbar from "../Header/Navbar";
-import "./Signup.css";
+import { useToast } from "../ui/use-toast";
+import useRegister from "@/features/Authentication/useRegister";
 
 
 interface SignUpForm {
   name: string;
   email: string;
-  phoneNumber: string;
-  registrationNumber: string;
-  isSRMKTRStudent: boolean;
-  gender: string;
   password: string;
+  reg_number: string;
+  is_ktr_student: boolean;
+  gender: string;
+  phone_number: number;
+
   confirmPassword: string;
 }
 
@@ -22,76 +23,154 @@ const SignUp: React.FC = () => {
     formState: { errors },
     getValues,
   } = useForm<SignUpForm>();
-
-  const onSubmit = (data: SignUpForm) => {
-    console.log(data);
-    // Your form submission logic here
+  const { toast } = useToast();
+  const { signupUser, isLoading } = useRegister();
+  const onSubmit = async (data: SignUpForm) => {
+    console.log("inside submit");
+    if (data.password !== data.confirmPassword) {
+      toast({
+        variant: "error",
+        title: "Passwords do not match",
+        description: "Please check your confirm password",
+      });
+      return;
+    }
+    try {
+      signupUser(data);
+    
+      localStorage.setItem("isAuth", "false");
+      // console.log(data);
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
   };
   return (
-    <div className="flex justify-center items-center h-screen bg-[#130c1a] lg:pt-32 lg:pb-32 overflow-auto">
-      <Navbar />
-      <div className="relativelg:mt-28  max-w-full w-9/12 md:w-4/6 lg:w-2/6 bg-[#28242f] rounded-xl shadow-lg p-6 lg:p-12 ">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
-          Register
+    <div className="flex justify-center items-center bg-[#130c1a] signupContainer">
+      <div className="max-w-full w-[90vw] md:w-4/6 lg:w-4/6 bg-[#28242f] border-4 bg-transparent shadow-lg md:p-6 space-y-6  relative z-[1] mt-[100px] ">
+        <h2 className="text-4xl pt-[20px] md:text-4xl lg:text-5xl font-bold text-center text-white mb-6 font-['Unbounded',sans-serif]">
+          Sign Up
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Name Field */}
-          <div className="flex flex-col">
-            <label
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
-              htmlFor="name"
-            >
-              NAME
-            </label>
-            <input
-              type="text"
-              {...register("name", { required: "Name is required" })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
-              id="name"
-              placeholder="bob the builder"
-            />
-            {errors.name && (
-              <p className="text-red-600">{errors.name.message}</p>
-            )}
+          <div className=" md:flex  md:flex-row  justify-center items-center ">
+            {/* Name Field */}
+            <div className="flex flex-1 flex-col mx-[20px] ">
+              <label
+                className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
+                htmlFor="name"
+              >
+                NAME
+              </label>
+              <input
+                type="text"
+                {...register("name", { required: "Name is required" })}
+                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white "
+                id="name"
+                placeholder="Enter Your Name"
+              />
+              {errors.name && (
+                <p className="text-white text-[1.3rem] mt-[5px] ">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
+
+            {/* Email Field */}
+            <div className="flex flex-1 flex-col mx-[20px] ">
+              <label
+                className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
+                htmlFor="email"
+              >
+                EMAIL
+              </label>
+              <input
+                type="email"
+                {...register("email", {
+                  required: "SRM Email is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@srmist\.edu\.in$/,
+                    message: "Invalid SRM email address",
+                  },
+                })}
+                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white "
+                id="email"
+                placeholder="Enter Your SRM Email"
+              />
+              {errors.email && (
+                <p className="text-white text-[1.3rem] mt-[5px]">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
           </div>
 
-          {/* Email Field */}
-          <div className="flex flex-col">
-            <label
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
-              htmlFor="email"
-            >
-              EMAIL
-            </label>
-            <input
-              type="email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^\S+@\S+\.\S+$/,
-                  message: "Invalid email address",
-                },
-              })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
-              id="email"
-              placeholder="bobthebuilder@example.com"
-            />
-            {errors.email && (
-              <p className="text-red-600">{errors.email.message}</p>
-            )}
+          <div className=" md:flex  md:flex-row  justify-center items-center">
+            <div className="flex flex-1 flex-col mx-[20px]">
+              <label
+                htmlFor="password"
+                className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
+              >
+                PASSWORD
+              </label>
+              <input
+                type="password"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 characters",
+                  },
+                })}
+                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+                id="password"
+                placeholder="********"
+              />
+              {errors.password && (
+                <p className="text-white text-[1.3rem] mt-[5px]">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            {/* Confirm Password Field */}
+            <div className="flex  flex-1 flex-col mx-[20px]">
+              <label
+                htmlFor="confirmPassword"
+                className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
+              >
+                CONFIRM PASSWORD
+              </label>
+              <input
+                type="password"
+                {...register("confirmPassword", {
+                  required: "Please confirm your password",
+                  // validate: value => value === password || "The passwords do not match",
+                  validate: (value) =>
+                    value === getValues("password") ||
+                    "The passwords do not match",
+                })}
+                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+                id="confirmPassword"
+                placeholder="********"
+              />
+              {errors.confirmPassword && (
+                <p className="text-white text-[1.3rem] mt-[5px]">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
+            </div>
           </div>
 
           {/* Phone Number Field */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mx-[20px]">
             <label
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
+              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
               htmlFor="phoneNumber"
             >
               PHONE NUMBER
             </label>
             <input
               type="tel"
-              {...register("phoneNumber", {
+              {...register("phone_number", {
                 required: "Phone number is required",
                 minLength: {
                   value: 10,
@@ -106,74 +185,28 @@ const SignUp: React.FC = () => {
                   message: "Phone number must contain only digits",
                 },
               })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
+              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
               id="phoneNumber"
-              placeholder="1234567890"
+              placeholder="Enter Your Phone Number"
             />
-            {errors.phoneNumber && (
-              <p className="text-red-600">{errors.phoneNumber.message}</p>
-            )}
-          </div>
-          <div className="flex flex-col">
-            <label
-              htmlFor="password"
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
-            >
-              PASSWORD
-            </label>
-            <input
-              type="password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 8,
-                  message: "Password must be at least 8 characters",
-                },
-              })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
-              id="password"
-            />
-            {errors.password && (
-              <p className="text-red-600">{errors.password.message}</p>
-            )}
-          </div>
-
-          {/* Confirm Password Field */}
-          <div className="flex flex-col">
-            <label
-              htmlFor="confirmPassword"
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
-            >
-              CONFIRM PASSWORD
-            </label>
-            <input
-              type="password"
-              {...register("confirmPassword", {
-                required: "Please confirm your password",
-                // validate: value => value === password || "The passwords do not match",
-                validate: (value) =>
-                  value === getValues("password") ||
-                  "The passwords do not match",
-              })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
-              id="confirmPassword"
-            />
-            {errors.confirmPassword && (
-              <p className="text-red-600">{errors.confirmPassword.message}</p>
+            {errors.phone_number && (
+              <p className="text-white text-[1.3rem] mt-[5px]">
+                {errors.phone_number.message}
+              </p>
             )}
           </div>
 
           {/* Registration Number Field */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mx-[20px]">
             <label
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
+              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
               htmlFor="registrationNumber"
             >
               REGISTRATION NUMBER
             </label>
             <input
               type="text"
-              {...register("registrationNumber", {
+              {...register("reg_number", {
                 required: "Registration number is required",
                 validate: {
                   length: (value) =>
@@ -184,76 +217,108 @@ const SignUp: React.FC = () => {
                     "Registration number must start with 'RA'",
                 },
               })}
-              className="form-input mt-1 block w-full border-gray-300 bg-[#71697e] rounded-md shadow-sm mb-4 lg:mb-8"
+              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
               id="registrationNumber"
-              placeholder="RA201100306969"
+              placeholder="Enter Your Registration Number"
             />
-            {errors.registrationNumber && (
-              <p className="text-red-600">
-                {errors.registrationNumber.message}
+            {errors.reg_number && (
+              <p className="text-white text-[1.3rem] mt-[5px]">
+                {errors.reg_number.message}
               </p>
             )}
           </div>
 
           {/* Checkbox for SRMKTR Student */}
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-4 mx-[20px]">
             <label
-              htmlFor="isSRMKTRStudent"
-              className="mr-2 block text-slate-100 text-sm md:text-lg lg:text-xl  font-bold "
+              htmlFor="is_ktr_student"
+              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2 mr-4"
             >
-              STUDENT OF SRMKTR
+              STUDENT OF SRM KTR
             </label>
             <input
               type="checkbox"
-              {...register("isSRMKTRStudent")}
-              className="h-5 w-5 "
+              {...register("is_ktr_student")}
+              className="form-checkbox h-8 w-8 bg-[#71697e] text-blue-600"
               id="isSRMKTRStudent"
             />
             
           </div>
 
           {/* Gender Field */}
-          <div className="flex flex-col">
+          <div className="flex flex-col mx-[20px]">
             <label
-              className="text-slate-100 text-sm md:text-lg lg:text-xl font-bold mb-2"
+              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
               htmlFor="gender"
             >
               GENDER
             </label>
             <select
               {...register("gender", { required: "Gender is required" })}
-              className="form-select px-[0.8rem] py-[1.2rem] text-[1.6rem] mt-1 block w-full bg-[#71697e] border-gray-300 rounded-md shadow-sm mb-4 lg:mb-8"
+              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
               id="gender"
             >
-              <option value="">Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+              <option className="text-black" value="">
+                -Select Gender-
+              </option>
+              <option className="text-black" value="male">
+                Male
+              </option>
+              <option className="text-black" value="female">
+                Female
+              </option>
+              <option className="text-black" value="other">
+                Other
+              </option>
             </select>
             {errors.gender && (
-              <p className="text-red-600">{errors.gender.message}</p>
+              <p className="text-white text-[1.3rem] mt-[5px]">
+                {errors.gender.message}
+              </p>
             )}
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mx-[20px]">
             <button
-              className="bg-violet-800 hover:bg-[#b19cff] text-white md:text-[1.5rem] font-bold px-8 py-4 md:py-6 md:px-12 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
+              // disabled={isLoading}
+              className="bg-violet-800 hover:bg-violet-800/90 text-white md:text-[1.5rem] font-bold px-8 py-4 md:py-6 md:px-12 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-[0.3rem] text-[1.5rem] w-full mt-[20px] "
               type="submit"
             >
-              Sign Up
+              {isLoading ? (
+                <div className="flex items-center justify-center ">
+                  <svg
+                    className="animate-spin h-10 w-10 mr-3 ..."
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                </div>
+              ) : (
+                "Sign Up"
+              )}
             </button>
           </div>
 
           {/* Login Link */}
+
           <div className="text-center">
-            <p className="text-slate-100">
+            <p className="text-slate-100 text-[1.5rem] ">
               Already have an account?
-              <a
-                href="/login"
-                className="text-blue-500 hover:text-blue-700 ml-2"
-              >
-                Login.
+              <a href="/login" className="text-white  ml-2  font-bold ">
+                Login
               </a>
             </p>
           </div>

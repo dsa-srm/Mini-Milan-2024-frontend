@@ -18,7 +18,9 @@ export const theme = {
 	},
 	extend: {
 		colors: {
-			cBlue: "#453E84",
+			cBlue: "#320045",
+			cOrange:"#FF7B4B",
+			cYellow:"#FCB045",
 			border: "hsl(var(--border))",
 			input: "hsl(var(--input))",
 			ring: "hsl(var(--ring))",

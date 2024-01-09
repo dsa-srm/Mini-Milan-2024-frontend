@@ -7,10 +7,10 @@ interface BoxRowProps {
 
 const BoxRow = ({ field, value, icon, wrap }: BoxRowProps) => {
 	return (
-		<div className="flex w-full items-center justify-start gap-2 text-cBlue">
-			<p className="text-[1.6rem]">{icon}</p>
-			<p className="text-[1.4rem] font-semibold">{field} :</p>
-			<p className={`text-[1.4rem]`}>
+		<div className="flex w-full items-baseline justify-start gap-2 text-white font-[montserrat]   ">
+			<p className="text-[2rem]">{icon}</p>
+			<p className="text-[1.8rem] font-semibold">{field} :</p>
+			<p className={`text-[1.5rem]`}>
 				{wrap && value.length > wrap
 					? value.slice(0, wrap) + "..."
 					: value.toString()}
