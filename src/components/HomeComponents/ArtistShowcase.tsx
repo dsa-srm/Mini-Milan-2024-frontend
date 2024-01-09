@@ -44,7 +44,7 @@ const ArtistShowcase = ({
         className="mx-auto relative z-20 max-w-lg lg:max-w-[76rem] top-40  md:top-[3rem]  lg:top-32 snap-always snap-center"
       />
       {/* Bottom Text */}
-      <div className="relative z-40  text-[10vw] md:text-[7vw] lg:text-[8vw]  -bottom-24  md:bottom-12  lg:bottom-18 uppercase animate-bounce font-alinsa text-white">
+      <div className="relative z-40  text-[10vw] md:text-[7vw] lg:text-[8vw]  -bottom-24  md:bottom-12  lg:bottom-18 uppercase font-alinsa text-white floating">
         {name}
       </div>
     </div>

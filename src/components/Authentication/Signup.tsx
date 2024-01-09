@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useToast } from "../ui/use-toast";
 import useRegister from "@/features/Authentication/useRegister";
+import "./signup.css";
+
 
 
 interface SignUpForm {
@@ -44,9 +46,12 @@ const SignUp: React.FC = () => {
       console.error("Signup error:", error);
     }
   };
+
+  
   return (
-    <div className="flex justify-center items-center bg-[#130c1a] signupContainer">
-      <div className="max-w-full w-[90vw] md:w-4/6 lg:w-4/6 bg-[#28242f] border-4 bg-transparent shadow-lg md:p-6 space-y-6  relative z-[1] mt-[100px] ">
+    <div className="flex justify-center items-center bg-[#130c1a] signupContainer min-h-screen ">
+      
+      <div className="max-w-full w-[80vw] md:w-4/6 lg:w-3/6 bg-orange-500 rounded-2xl border-4  border-orange-300 shadow-lg md:p-6 space-y-6  relative z-[1] mt-[100px] ">
         <h2 className="text-4xl pt-[20px] md:text-4xl lg:text-5xl font-bold text-center text-white mb-6 font-['Unbounded',sans-serif]">
           Sign Up
         </h2>
@@ -63,7 +68,7 @@ const SignUp: React.FC = () => {
               <input
                 type="text"
                 {...register("name", { required: "Name is required" })}
-                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white "
+                className="form-input mt-1 mb-4 md:mb-0 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800 "
                 id="name"
                 placeholder="Enter Your Name"
               />
@@ -91,7 +96,7 @@ const SignUp: React.FC = () => {
                     message: "Invalid SRM email address",
                   },
                 })}
-                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white "
+                className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800 "
                 id="email"
                 placeholder="Enter Your SRM Email"
               />
@@ -120,7 +125,7 @@ const SignUp: React.FC = () => {
                     message: "Password must be at least 8 characters",
                   },
                 })}
-                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+                className="form-input mt-1 mb-4 md:mb-0 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
                 id="password"
                 placeholder="********"
               />
@@ -148,7 +153,7 @@ const SignUp: React.FC = () => {
                     value === getValues("password") ||
                     "The passwords do not match",
                 })}
-                className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+                className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
                 id="confirmPassword"
                 placeholder="********"
               />
@@ -185,7 +190,7 @@ const SignUp: React.FC = () => {
                   message: "Phone number must contain only digits",
                 },
               })}
-              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+              className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
               id="phoneNumber"
               placeholder="Enter Your Phone Number"
             />
@@ -217,7 +222,7 @@ const SignUp: React.FC = () => {
                     "Registration number must start with 'RA'",
                 },
               })}
-              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+              className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
               id="registrationNumber"
               placeholder="Enter Your Registration Number"
             />
@@ -255,10 +260,10 @@ const SignUp: React.FC = () => {
             </label>
             <select
               {...register("gender", { required: "Gender is required" })}
-              className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 text-white"
+              className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
               id="gender"
             >
-              <option className="text-black" value="">
+              <option className="text-grey-100" value="">
                 -Select Gender-
               </option>
               <option className="text-black" value="male">

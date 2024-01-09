@@ -30,7 +30,9 @@ const Header = () => {
   return (
     <header className={`p-4 w-[100vw] fixed top-0 z-[997] headerContainer`}>
       <div className="flex gap-x-4 justify-between items-center relative z-[999]">
+        <a href="/">          
       <img src={Logo} alt="Logo" className=" h-12 lg:h-28" />
+      </a>
         
         <div className={`lg:flex hidden ${isSidebarOpen ? 'hidden' : ''}`}>
           {/* Navigation links for large screens */}
