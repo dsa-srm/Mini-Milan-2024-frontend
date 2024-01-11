@@ -1,7 +1,8 @@
 import React from 'react'
 import HeroSection from '@/components/HomeComponents/Hero'
-import ArtistShowcase from '@/components/HomeComponents/ArtistShowcase'
+import ArtistShowcase2 from '@/components/HomeComponents/ArtistShowcase2.tsx'
 import artistsData from '../../data/artistData.ts';
+import AboutMiniMilan from '@/components/HomeComponents/AboutMiniMilan.tsx';
 import './home.css';
 
 const Home = () => {
@@ -9,9 +10,14 @@ const Home = () => {
         <div className='bodybg'>
             
             <HeroSection/>
-            {artistsData.map((artist: { name: string; imageUrl: string; }, index: React.Key | null | undefined) => (
-                <ArtistShowcase key={index} name={artist.name} imageUrl={artist.imageUrl} />
+            {artistsData.map((artist: { name: string; imageUrl: string; bottomimageUrl: string; }, index: React.Key | null | undefined) => (
+                <ArtistShowcase2 key={index} name={artist.name} imageUrl={artist.imageUrl} bottomimageUrl={artist.bottomimageUrl} />
+    
             ))}
+            <AboutMiniMilan/>     
+        
+            
+
         </div>
     )
 }

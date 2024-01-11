@@ -1,6 +1,5 @@
 .dashboardContainer{
-    background: rgb(131,58,180);
-    background: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+    background-color: #130025;
 }
 
 .dashboardContainer::after{
@@ -11,7 +10,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url("../../assets/Images/noise.png"), rgba(240, 89, 39, 0.299) 0% 0% / 100px 100px repeat;
+	background: url("../../assets/Images/noise.png"), rgba(0, 0, 0, 0) 0% 0% / 100px 100px repeat;
 	image-rendering: pixelated;
 	/* mix-blend-mode: soft-light; */
 }
