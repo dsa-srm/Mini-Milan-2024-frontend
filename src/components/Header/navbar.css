@@ -1,0 +1,18 @@
+.button {
+    /* Other styles */
+    padding: 0.5rem 3rem;
+    color: white;
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #ff7f4b, #ff487f);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px #07072d inset;
+    transition: color 0.3s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+  }
+  
+  .button:hover {
+    box-shadow: none;
+    color: white;
+    /* Optionally, add other hover styles here */
+  }
+  
