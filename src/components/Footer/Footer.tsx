@@ -1,7 +1,6 @@
-import React from 'react';
 import srmlogo from '../../assets/srm.png';
 import navlogo from '../../assets/navLogo.png'
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import the appropriate React icons
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import the appropriate React icons
 
 const Footer = () => {
   return (

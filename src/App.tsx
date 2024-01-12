@@ -29,7 +29,7 @@ function App() {
 					<Route path="/" element={<Home/>} />
 
 					
-					<Route >
+					<Route  element={<ProtectedRoutes />} >
 						<Route  element={<Navigate to="/dashboard" />} />
 						<Route path="/dashboard" element={<Dashboard />} />
 					</Route>

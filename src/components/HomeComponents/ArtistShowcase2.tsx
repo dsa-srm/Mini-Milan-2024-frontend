@@ -1,4 +1,3 @@
-import React from "react";
 import border from '../../assets/rectangle.png'
 import './artist.css'
 
