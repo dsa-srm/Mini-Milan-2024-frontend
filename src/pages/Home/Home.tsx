@@ -1,26 +1,25 @@
+import React from 'react'
+import HeroSection from '@/components/HomeComponents/Hero'
+import ArtistShowcase2 from '@/components/HomeComponents/ArtistShowcase2.tsx'
+import artistsData from '../../data/artistData.ts';
+import AboutMiniMilan from '@/components/HomeComponents/AboutMiniMilan.tsx';
+import './home.css';
 
-import "./Home.css";
-import mountains from "../../assets/Images/heroMountains.png";
-import stars from "../../assets/Images/stars.png";
-function Home() {
-
-  
-
-  return (
-    <div
-    className="h-[200vh] w-[100vw] homeContainer "
-    >
+const Home = () => {
+    return (
+        <div className='bodybg'>
+            
+            <HeroSection/>
+            {artistsData.map((artist: { name: string; imageUrl: string; bottomimageUrl: string; }, index: React.Key | null | undefined) => (
+                <ArtistShowcase2 key={index} name={artist.name} imageUrl={artist.imageUrl} bottomimageUrl={artist.bottomimageUrl} />
     
-<section className="w-[100vw] h-[100vh] relative">
-    <p className=" heroHead font-[Alinsa] text-[15rem] text-white leading-[80%] text-center pt-[300px] relative z-[1] "> MINI MILAN </p>
- 
-      <img className="h-[30vh] w-[100vw] absolute bottom-[0] z-[1]   " src={mountains}></img>
-      <img className="h-[100vh] w-[100vw] absolute bottom-[0] scale-[0.7]   " src={stars}></img>
-</section>
+            ))}
+            <AboutMiniMilan/>     
+        
+            
 
-
-    </div>
-  )
+        </div>
+    )
 }
 
-export default Home
+export default Home;

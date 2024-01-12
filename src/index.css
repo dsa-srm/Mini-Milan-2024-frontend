@@ -6,6 +6,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+	font-family: 'alinsa';
+	src: url('../src/assets/fonts/alinsa.otf') format('opentype');
+}
 @layer base {
 	:root {
 	  --background: 0 0% 100%;
@@ -131,15 +135,13 @@ body {
 */
 
 .loginPageContainer{
-	background: rgb(131,58,180);
-	background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	background-color: #07072d;
+	
 	/* background: linear-gradient(180deg, #320045 23.48%, #FF7B4B 60.83%, #FCB045 80.1%, #C92B44 100%); */
 
 }
 
-.loginBox{
-		box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
-}
+
 
 .loginPageContainer::after{
 	content: "";
@@ -154,9 +156,7 @@ body {
 	/* mix-blend-mode: soft-light; */
 }
 .signupContainer{
-	background-color: #FF3CAC;
-	background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-	
+	background-color: #07072d;
 
 }
 
@@ -167,7 +167,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background: url("./assets/Images/noise.png"), rgba(0, 123, 246, 0.081) 0% 0% / 100px 100px repeat;
 	image-rendering: pixelated;
 	/* mix-blend-mode: soft-light; */
@@ -230,4 +230,20 @@ background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 	background: url("./assets/Images/noise.png"), rgba(246, 0, 0, 0.081) 0% 0% / 100px 100px repeat;
 	image-rendering: pixelated;
 	/* mix-blend-mode: soft-light; */
+}
+
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* margin-left: 30px; */
+    margin-top: 5px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
 }

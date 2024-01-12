@@ -26,8 +26,8 @@ const SignIn: React.FC = () => {
 	};
 
 	return (
-		<div className="flex justify-center items-center h-screen bg-[#130c1a] loginPageContainer ">
-			<div className="max-w-full w-[90vw] md:w-4/6 lg:max-w-[500px]  shadow-lg p-6 space-y-6 relative z-[1] border-4  ">
+		<div className="flex justify-center items-center h-screen bg-[#130c1a] loginPageContainer min-h-screen">
+			<div className="max-w-full w-[90vw] md:w-4/6 lg:max-w-[500px]  shadow-lg p-6 space-y-6 relative z-[1] border-4  bg-orange-500 rounded-2xl   border-orange-300  ">
 				<h2 className="text-[3rem] font-['unbounded',sans-serif] md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
 					Sign In
 				</h2>
@@ -49,7 +49,7 @@ const SignIn: React.FC = () => {
 									message: "Invalid SRM email address",
 								},
 							})}
-							className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 "
+							className="form-input mt-1 mb-4 md:mb-0 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800 "
 							id="email"
 							placeholder="your-email@srmist.edu.in"
 						/>
@@ -73,7 +73,7 @@ const SignIn: React.FC = () => {
 							{...register("password", {
 								required: "Password is required",
 							})}
-							className="form-input mt-1 block w-full rounded-md border-2 bg-transparent px-4 border-white  h-[45px] text-[1.8rem]  placeholder:text-white focus:outline-none focus:text-white placeholder:opacity-50 "
+							className="form-input mt-1 mb-4 md:mb-0 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800 "
 							id="password"
 							placeholder="********"
 						/>
