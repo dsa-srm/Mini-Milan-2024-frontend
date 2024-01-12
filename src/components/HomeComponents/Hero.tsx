@@ -1,4 +1,3 @@
-import React from "react";
 import TopSVG from "../../assets/top.svg";
 import BottomSVG from "../../assets/bottom.svg";
 import "./Hero.css";

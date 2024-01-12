@@ -1,4 +1,4 @@
-import TicketsCounter from "@/components/Tickets/TicketsCounter";
+// import TicketsCounter from "@/components/Tickets/TicketsCounter";
 import "./Dashboard.css";
 import UserDetailsBox from "@/components/UserDetails/UserDetailsBox";
 import useBookTicket from "@/features/Bookings/useBookTicket";
