@@ -51,7 +51,7 @@ const useLogin = () => {
 		},
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		onError: async (error: any) => {
-			console.log(error);
+			console.error(error);
 		},
 	});
 
