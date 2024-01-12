@@ -19,7 +19,7 @@ const useLogout = () => {
             })
 		},
 		onError: (error: Error) => {
-			console.log(error);
+			console.error(error);
 		},
 	});
 

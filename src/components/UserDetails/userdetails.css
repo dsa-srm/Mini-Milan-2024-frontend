@@ -1,0 +1,10 @@
+.bgimg{
+    background-image: url('../../assets/idbg.png');
+ 
+}
+
+@media only screen and (max-width: 767px) { /* or another breakpoint */
+    .bgimg {
+        background-position: 50% 20%; /* Centered horizontally, aligned to the very top */
+    }
+}

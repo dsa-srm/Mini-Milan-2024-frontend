@@ -73,7 +73,7 @@ const useRegister = () => {
     },
 
     onError: (error: any) => {
-      console.log(error);
+      console.error(error);
     },
   });
 

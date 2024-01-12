@@ -77,7 +77,7 @@ export async function logoutUser() {
 
 export async function registerUser(userObj: IRegisterUserObject) {
   try {
-    console.log("inside register user");
+    console.error("inside register user");
     const response = await fetch(registerUserApi, {
       method: "POST",
       headers: {

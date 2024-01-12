@@ -15,7 +15,7 @@ const useDelete = () => {
 			navigate("/login", { replace: true });
 		},
 		onError: (error) => {
-			console.log(error);
+			console.error(error);
 		},
 	});
 
