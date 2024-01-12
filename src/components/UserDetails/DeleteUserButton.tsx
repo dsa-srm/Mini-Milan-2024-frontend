@@ -44,7 +44,7 @@ const DeleteUserButton = () => {
         <DialogTrigger>
           <button
             disabled={isGettingUser || isDeleting}
-            className="bg-red-700/[.8] transition-all duration-500 text-white py-2 px-4 rounded-[.6rem] hover:bg-red-600/[.8] text-[1.5rem] font-bold font-[montserrat] tracking-tight  "
+            className="bg-red-700/[.8] transition-all duration-500 text-white py-2 px-4 rounded-[.6rem] hover:bg-red-600/[.8] text-[1.5rem] font-bold font-unbounded tracking-tight  "
           >
             Delete Account
           </button>

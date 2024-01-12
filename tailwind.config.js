@@ -87,7 +87,8 @@ export const theme = {
 			mm_esm: "2rem",
 		},
 		fontFamily: {
-			alinsa: ['alinsa'], // Create a new utility name
+			alinsa: ['alinsa'],
+			unbounded: ['Unbounded', 'sans-serif'], // Create a new utility name
 		  },
 		
 		  backgroundPosition: {
