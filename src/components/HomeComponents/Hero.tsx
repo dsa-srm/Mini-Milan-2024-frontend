@@ -1,6 +1,6 @@
 import TopSVG from "../../assets/top.svg";
 import BottomSVG from "../../assets/bottom.svg";
-import "./Hero.css";
+import "./hero.css";
 const Hero = () => {
   return (
     <div className="relative bg-[#130025] h-screen lg:h-[125vh] flex items-center justify-center overflow-hidden">
