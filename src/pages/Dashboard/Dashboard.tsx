@@ -18,7 +18,7 @@ const Dashboard = () => {
 
 	const { isLoading: urlLoading, bookTicketNow } = useBookTicket();
 
-	const { isLoading: emailLoading, resendEmail } = useResendEmail();
+	const { isLoading: emailLoading} = useResendEmail();
 
 	function handleBook() {
 		if (!user) return;

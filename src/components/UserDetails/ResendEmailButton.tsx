@@ -1,5 +1,5 @@
 // ResendEmailButton.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useResendEmail from "@/features/Bookings/useResendEmail";
 import ButtonSpinner from "@/components/Spinners/ButtonSpinner";
 import useUser from "@/features/Authentication/useUser";
