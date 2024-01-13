@@ -7,6 +7,7 @@
 
 import useUser from "@/features/Authentication/useUser";
 import DeleteUserButton from "./DeleteUserButton";
+import ResendEmailButton from "./ResendEmailButton";
 import { HiBookOpen, HiMail, HiPhone, HiTicket } from "react-icons/hi";
 import { IoPerson } from "react-icons/io5";
 import './userdetails.css'
@@ -18,7 +19,7 @@ const UserDetailsBox = () => {
 	console.log(user);
 
 	return (
-		<div className="flex flex-col items-center justify-end w-5/6  lg:w-4/6  p-4 lg:space-y-4 h-5/6 md:h-5/6 bgimg rounded-lg shadow-md">
+		<div className="flex flex-col items-center justify-end w-5/6  lg:w-4/6 xl:w-3/6 max-w-[45rem]  p-4 lg:space-y-4 max-h-[50rem] xl:max-h-[65rem] h-5/6 lg:h-[80%] bgimg rounded-lg shadow-md">
 			<div className="flex items-center justify-center w-24 h-24 lg:w-32 lg:h-32 bg-gray-100 rounded-full md:mb-12">
 				<IoPerson className="text-6xl text-gray-400" />
 			</div>
@@ -51,6 +52,7 @@ const UserDetailsBox = () => {
 				</div>
 			</div>
 			{!user?.is_ticket_issued && <DeleteUserButton />}
+			{user?.is_ticket_issued && <ResendEmailButton />}
 		</div>
 		
 	);
