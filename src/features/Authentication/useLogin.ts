@@ -3,6 +3,7 @@ import { useQueryClient, useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "@/services/apiUser";
 import { useToast } from "@/components/ui/use-toast";
+
 interface LoginProps {
 	email: string;
 	password: string;
@@ -10,6 +11,8 @@ interface LoginProps {
 
 const useLogin = () => {
 	const navigate = useNavigate();
+
+
 	const queryClient = useQueryClient();
 	const { toast } = useToast();
 	const { isLoading, mutate: login } = useMutation({
@@ -24,7 +27,9 @@ const useLogin = () => {
 					description: "You have logged in successfully",
 				});
 				localStorage.setItem("isAuth", "true");
-				navigate("/dashboard", { replace: true });
+				
+					navigate("/dashboard", { replace: true });
+				
 			} else {
 				if (userData.message_code === "USER_NOT_FOUND") {
 					toast({
