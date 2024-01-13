@@ -3,7 +3,7 @@ import HeroSection from '@/components/HomeComponents/Hero'
 import ArtistShowcase2 from '@/components/HomeComponents/ArtistShowcase2.tsx'
 import artistsData from '../../data/artistData.ts';
 import AboutMiniMilan from '@/components/HomeComponents/AboutMiniMilan.tsx';
-import './home.css';
+import './homebg.css';
 
 const Home = () => {
     return (
