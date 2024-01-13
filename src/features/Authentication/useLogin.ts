@@ -11,6 +11,8 @@ interface LoginProps {
 
 const useLogin = () => {
 	const navigate = useNavigate();
+
+
 	const queryClient = useQueryClient();
 	const { toast } = useToast();
 	const { isLoading, mutate: login } = useMutation({
@@ -25,7 +27,9 @@ const useLogin = () => {
 					description: "You have logged in successfully",
 				});
 				localStorage.setItem("isAuth", "true");
-				navigate("/dashboard", { replace: true });
+				
+					navigate("/dashboard", { replace: true });
+				
 			} else {
 				if (userData.message_code === "USER_NOT_FOUND") {
 					toast({
