@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useToast } from "../ui/use-toast";
 import useRegister from "@/features/Authentication/useRegister";
-import "./signup.css";
+
 
 
 
