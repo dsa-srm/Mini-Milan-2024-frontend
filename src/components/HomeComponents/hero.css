@@ -1,0 +1,18 @@
+/* hero.css */
+.herotext1 {
+    background-image: url('../../assets/herotext1.png'); /* Adjust the path as needed */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    background-size: cover;
+  }
+  
+  .herotext2 {
+    background-image: url('../../assets/herotext2.png'); /* Adjust the path as needed */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    background-size: cover;
+    
+
+  }

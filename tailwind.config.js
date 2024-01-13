@@ -18,7 +18,9 @@ export const theme = {
 	},
 	extend: {
 		colors: {
-			cBlue: "#453E84",
+			cBlue: "#320045",
+			cOrange:"#FF7B4B",
+			cYellow:"#FCB045",
 			border: "hsl(var(--border))",
 			input: "hsl(var(--input))",
 			ring: "hsl(var(--ring))",
@@ -84,6 +86,24 @@ export const theme = {
 			mm_lg: "8rem",
 			mm_esm: "2rem",
 		},
+		fontFamily: {
+			alinsa: ['alinsa'],
+			unbounded: ['Unbounded', 'sans-serif'], // Create a new utility name
+		  },
+		
+		  backgroundPosition: {
+			bottom: 'bottom',
+			'bottom-4': 'center bottom 100rem',
+			center: 'center',
+			left: 'left',
+			'left-bottom': 'left bottom',
+			'left-top': 'left top',
+			right: 'right',
+			'right-bottom': 'right bottom',
+			'right-top': 'right top',
+			top: 'top',
+			'top-4': 'center top 1rem',
+		  }
 	},
 };
-export const plugins = [require("tailwindcss-animate")];
+export const plugins = [require("tailwindcss-animate"),require('daisyui')];
