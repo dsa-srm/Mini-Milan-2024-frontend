@@ -10,3 +10,4 @@ export const logoutUserApi = `${VAR}/api/users/logout`;
 export const registerUserApi = `${VAR}/api/users/signup`;
 export const ticketsApi = `${VAR}/api/bookings/livecount`;
 export const bookTicketApi = `https://neotesting.online/app101/api/encryptData`;
+export const resendEmailApi = `${VAR}/api/bookings/resendEmail`;
