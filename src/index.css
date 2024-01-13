@@ -8,7 +8,7 @@
 @tailwind utilities;
 @font-face {
 	font-family: 'alinsa';
-	src: url('../src/assets/fonts/alinsa.otf') format('opentype');
+	src: url('../src/assets/fonts/alinsa.ttf') format('truetype');
 }
 @layer base {
 	:root {

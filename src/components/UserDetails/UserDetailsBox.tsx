@@ -7,6 +7,7 @@
 
 import useUser from "@/features/Authentication/useUser";
 import DeleteUserButton from "./DeleteUserButton";
+import ResendEmailButton from "./ResendEmailButton";
 import { HiBookOpen, HiMail, HiPhone, HiTicket } from "react-icons/hi";
 import { IoPerson } from "react-icons/io5";
 import './userdetails.css'
@@ -51,6 +52,7 @@ const UserDetailsBox = () => {
 				</div>
 			</div>
 			{!user?.is_ticket_issued && <DeleteUserButton />}
+			{user?.is_ticket_issued && <ResendEmailButton />}
 		</div>
 		
 	);
