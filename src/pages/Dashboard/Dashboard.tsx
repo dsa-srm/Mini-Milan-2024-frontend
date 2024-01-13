@@ -28,7 +28,6 @@ const Dashboard = () => {
 			name: user.name,
 			ticketPrice: "500",
 			ticketType: "1",
-			PID: "1",
 			userId: user.id,
 		});
 		

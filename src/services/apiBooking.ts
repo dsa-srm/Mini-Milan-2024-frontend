@@ -3,7 +3,6 @@ import { bookTicketApi, resendEmailApi, ticketsApi } from "@/Api/ApiRoutes";
 export interface IRegisterUserObject {
 	email: string;
 	mobile: string;
-	PID: string;
 	ticketType: string;
 	name: string;
 	ticketPrice: string;
