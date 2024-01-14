@@ -17,8 +17,8 @@ const ResendEmailButton = () => {
         resendEmail({
             email: user.email,
             user_id: user.id,
-            ticket_id: user.ticket_id, // Replace with your actual data source
-            payment_id: user.payment_id // Replace with your actual data source
+            ticket_id: user.booking_info.ticket_id, 
+            payment_id: user.booking_info.payment_id 
         });
 
         setCanResend(false);
