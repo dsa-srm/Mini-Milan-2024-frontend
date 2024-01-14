@@ -1,5 +1,5 @@
 .bgsquare{
-    background-image: url('../../assets/square.png');
+    background-image: url('/assets/square.png');
     background-position: center;
     background-repeat: no-repeat;
     
@@ -7,7 +7,7 @@
 
 @media (max-width: 600px) {
     .bgsquare {
-      background-image: url('../../assets/square2.png');
+      background-image: url('/assets/square2.png');
       background-position: center bottom 100px;
       background-repeat: no-repeat;
       

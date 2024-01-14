@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Logo from '../../assets/navLogo.png'; // Import your logo here
-import HamburgerIcon from '../../assets/hamburger.svg';
-import CloseIcon from '../../assets/close.svg';
+import Logo from '.././assets/navLogo.png'; // Import your logo here
+import HamburgerIcon from '.././assets/hamburger.svg';
+import CloseIcon from '.././assets/close.svg';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {

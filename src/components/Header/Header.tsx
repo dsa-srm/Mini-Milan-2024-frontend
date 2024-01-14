@@ -2,9 +2,9 @@ import  { useState } from 'react';
 import useLogout from "@/features/Authentication/useLogout";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
-import hamburgerIcon from '../../assets/hamburger.svg'; // Import hamburger icon
-import closeIcon from '../../assets/close.svg'; // Import close icon
-import Logo from '../../assets/milan.png'; // Import your logo here
+import hamburgerIcon from '/assets/hamburger.svg'; // Import hamburger icon
+import closeIcon from '/assets/close.svg'; // Import close icon
+import Logo from '/assets/milan.png'; // Import your logo here
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
