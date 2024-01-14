@@ -18,7 +18,6 @@ const useResendEmail = () => {
                     description: "Mail has been resent successfully.",
                 });
 			}
-            console.log(resData);
 			return resData;
              
 		}, 
