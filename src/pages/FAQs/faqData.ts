@@ -35,7 +35,7 @@ export const faqs = [
 	{
 		question: "When and where should we collect our offline passes?",
 		answer:
-			"Offline passes would be issued on January 19th, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
+			"Offline passes would be issued on January 18, 19 and 20th morning, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
 	},
 	{
 		question: "Can other campus students attend Mini Milan?",

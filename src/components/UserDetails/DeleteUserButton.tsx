@@ -59,7 +59,7 @@ const DeleteUserButton = () => {
               account and remove your data from our servers.
             </DialogDescription>
           </DialogHeader>
-          <DialogFooter className="sm:justify-end">
+          <DialogFooter className="sm:justify-end max-md:flex-row max-md:justify-center max-md:gap-10">
             <DialogClose asChild>
               <Button
                 type="button"
