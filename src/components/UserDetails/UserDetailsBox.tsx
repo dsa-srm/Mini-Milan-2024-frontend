@@ -16,7 +16,6 @@ const UserDetailsBox = () => {
 	const { isLoading, user } = useUser();
 
 	if (isLoading) return <div>Loading...</div>;
-	console.log(user);
 
 	return (
 		<div className="flex flex-col items-center justify-end w-5/6  lg:w-4/6 xl:w-3/6 max-w-[45rem]  p-4 lg:space-y-4 max-h-[50rem] xl:max-h-[65rem] h-5/6 lg:h-[80%] bgimg rounded-lg shadow-md">
