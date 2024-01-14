@@ -25,7 +25,7 @@ export const faqs = [
 	{
 		question: "In case of payment failure, what should be done?",
 		answer:
-			"In case of payment failure, please take a screenshot of your payment and mail it to XXXXXXXXXXXXXXXXXXXX.",
+			"In case of payment failure, please take a screenshot of your payment and mail it to support@paymenow.co.in.",
 	},
 	{
 		question:
@@ -42,4 +42,15 @@ export const faqs = [
 		answer:
 			"Only SRMKTR, Vadapalani & Ramapuram are allowed for Mini Milan 2024. Vadapalani and Ramapuram campus can collect their offline passes on 19th/20th Jan 2024.",
 	},
+	{
+		question: "What to be done incase the payment is successful and is visible on dashboard,but haven't received mail ?",
+		answer:
+			"Please do click on resend email button that is available to receive the QR",
+	},
+	{
+		question: "What to be done Incase the payment is successful and ticket is not issued?",
+		answer:
+			"Ticket slots are full and hence you would receive the refund details via email",
+	},
+
 ];

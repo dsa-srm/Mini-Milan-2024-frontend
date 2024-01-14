@@ -17,7 +17,7 @@ const ArtistShowcase2 = (
 ) => {
     
   return (
-    <div className="text-center h-fit md:h-[50vh] lg:h-[120vh] overflow-hidden bgsquare  bg-cover md:bg-contain  xl:bg-cover">
+    <div className="text-center h-fit md:h-fit lg:h-fit overflow-hidden bgsquare  bg-cover md:bg-contain  xl:bg-cover">
         <img src={border} alt="borderimg" className="w-full" />
         {/*artist image*/}
         <img src={imageUrl} alt='' className="mx-auto relative z-20 max-w-lg md:max-w-2xl lg:max-w-[76rem] top-10 lg:top-52 md:top-0"/>
