@@ -42,7 +42,7 @@ const Dashboard = () => {
               : "GRAB YOUR PASS TODAY TO EXPERIENCE THE ACTION!"}
           </h1>
 
-          {user?.is_ticket_issued === false ? (
+          {user?.is_ticket_issued === true ? (
             // Render this div when ticket_status is "success"
             <div className="w-4/6 lg:w-full mx-auto mb-10 h-[100px] bg-green-500 font-['unbounded',sans-serif] font-extrabold text-4xl lg:text-[2.8rem]  text-white p-10 rounded-3xl">
               Ticket Issued Successfully!
