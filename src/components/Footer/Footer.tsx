@@ -25,7 +25,7 @@ const Footer = () => {
         </div> */}
 
         {/* Social Media Links */}
-        <div className="flex space-x-4 justify-center md:justify-center  w-full gap-8">
+        <div className="flex space-x-4 justify-center md:justify-center  w-full gap-8 max-md:order-last">
           {/* Facebook */}
           <a
             href="https://www.facebook.com/your-facebook"

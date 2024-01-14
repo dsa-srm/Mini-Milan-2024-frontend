@@ -73,7 +73,7 @@ const SignUp: React.FC = () => {
                 placeholder="Enter Your Name"
               />
               {errors.name && (
-                <p className="text-white text-[1.3rem] mt-[5px] ">
+                <p className="text-red-200 text-[1.3rem] mt-[5px] ">
                   {errors.name.message}
                 </p>
               )}
@@ -101,7 +101,7 @@ const SignUp: React.FC = () => {
                 placeholder="Enter Your SRM Email"
               />
               {errors.email && (
-                <p className="text-white text-[1.3rem] mt-[5px]">
+                <p className="text-red-200 text-[1.3rem] mt-[5px]">
                   {errors.email.message}
                 </p>
               )}
@@ -130,7 +130,7 @@ const SignUp: React.FC = () => {
                 placeholder="********"
               />
               {errors.password && (
-                <p className="text-white text-[1.3rem] mt-[5px]">
+                <p className="text-red-200 text-[1.3rem] mt-[5px]">
                   {errors.password.message}
                 </p>
               )}
@@ -158,7 +158,7 @@ const SignUp: React.FC = () => {
                 placeholder="********"
               />
               {errors.confirmPassword && (
-                <p className="text-white text-[1.3rem] mt-[5px]">
+                <p className="text-red-200 text-[1.3rem] mt-[5px]">
                   {errors.confirmPassword.message}
                 </p>
               )}
@@ -195,7 +195,7 @@ const SignUp: React.FC = () => {
               placeholder="Enter Your Phone Number"
             />
             {errors.phone_number && (
-              <p className="text-white text-[1.3rem] mt-[5px]">
+              <p className="text-red-200 text-[1.3rem] mt-[5px]">
                 {errors.phone_number.message}
               </p>
             )}
@@ -227,7 +227,7 @@ const SignUp: React.FC = () => {
               placeholder="Enter Your Registration Number"
             />
             {errors.reg_number && (
-              <p className="text-white text-[1.3rem] mt-[5px]">
+              <p className="text-red-200 text-[1.3rem] mt-[5px]">
                 {errors.reg_number.message}
               </p>
             )}
@@ -277,7 +277,7 @@ const SignUp: React.FC = () => {
               </option>
             </select>
             {errors.gender && (
-              <p className="text-white text-[1.3rem] mt-[5px]">
+              <p className="text-red-200 text-[1.3rem] mt-[5px]">
                 {errors.gender.message}
               </p>
             )}

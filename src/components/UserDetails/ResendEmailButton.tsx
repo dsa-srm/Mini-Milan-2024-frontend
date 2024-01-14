@@ -31,7 +31,7 @@ const ResendEmailButton = () => {
         <button
             onClick={handleResendEmail}
             disabled={!canResend || isLoading}
-            className="resendEmailButtonStyle bg-yellow-700/[.8] transition-all duration-500 text-white py-2 px-4 rounded-[.6rem] hover:bg-yellow-400/[.8] text-[1.5rem] font-bold font-unbounded tracking-tight "
+            className="resendEmailButtonStyle bg-yellow-700/[.8] transition-all duration-500 text-white py-2 px-4 mt-5 rounded-[.6rem] hover:bg-yellow-400/[.8] text-[1.5rem] font-bold font-unbounded tracking-tight "
         >
             {isLoading ? <ButtonSpinner /> : "Resend Email"}
         </button>
