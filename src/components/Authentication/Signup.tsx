@@ -29,6 +29,7 @@ const SignUp: React.FC = () => {
   const { signupUser, isLoading } = useRegister();
   const onSubmit = async (data: SignUpForm) => {
     // console.log("inside submit");
+    data.is_ktr_student = true;
     if (data.password !== data.confirmPassword) {
       toast({
         variant: "error",
@@ -46,6 +47,7 @@ const SignUp: React.FC = () => {
       console.error("Signup error:", error);
     }
   };
+  
 
   
   return (
@@ -234,22 +236,7 @@ const SignUp: React.FC = () => {
           </div>
 
           {/* Checkbox for SRMKTR Student */}
-          <div className="flex items-center mb-4 mx-[20px]">
-            <label
-              htmlFor="is_ktr_student"
-              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2 mr-4"
-            >
-              STUDENT OF SRM KTR
-            </label>
-            <input
-              type="checkbox"
-              {...register("is_ktr_student")}
-              className="form-checkbox h-8 w-8 bg-[#71697e] text-blue-600"
-              id="isSRMKTRStudent"
-            />
-            
-          </div>
-
+          
           {/* Gender Field */}
           <div className="flex flex-col mx-[20px]">
             <label

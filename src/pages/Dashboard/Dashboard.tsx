@@ -26,7 +26,7 @@ const Dashboard = () => {
       mobile: user.phone_number,
       email: user.email,
       name: user.name,
-      ticketPrice: "2",
+      ticketPrice: "500",
       ticketType: "1",
       userId: user.id,
     });
