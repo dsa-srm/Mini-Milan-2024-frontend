@@ -8,7 +8,7 @@ const AboutMiniMilan = () => {
     >
       <div className="mx-32 border-l-8 border-r-8 border-white h-full w-full lg:h-[80vh] ">
         <div className="flex flex-col text-center font-unbounded text-white justify-center items-center">
-          <h1 className="text-6xl my-24">ABOUT MINI MILAN</h1>
+          <h1 className="text-6xl my-24 font-['unbounded','sans-serif']">ABOUT MINI MILAN</h1>
           <p className="w-7/12 text-2xl">
             Get ready to experience a breathtaking night , MINI MILAN
             exclusively for SRMIST. This cultural extravaganza signifies the
@@ -27,7 +27,7 @@ const AboutMiniMilan = () => {
           <h2 className="text-white font-alinsa text-6xl pt-16">
             EVENT DETAILS
           </h2>
-          <div className="flex flex-row w-full justify-around mt-16 font-alinsa">
+          <div className="flex flex-row w-full justify-around mt-16 font-['unbounded','sans-serif'] ">
             <div className="text-white font-bold text-3xl">
               <p>TP Ground</p>
               <p className="text-6xl">VENUE</p>

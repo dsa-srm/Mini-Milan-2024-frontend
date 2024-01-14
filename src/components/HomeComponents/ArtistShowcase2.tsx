@@ -23,7 +23,7 @@ const ArtistShowcase2 = (
         <img src={imageUrl} alt='' className="mx-auto relative z-20 max-w-lg md:max-w-2xl lg:max-w-[76rem] top-10 lg:top-52 md:top-0"/>
         {/*artist name or artistname image*/}
         <div >
-            <div className="hidden md:block relative z-40 lg:text-[8vw] md:text-[7vw] text-[10vw] md:bottom-16 lg:-bottom-10  font-alinsa text-white floating ">
+            <div className="hidden md:block relative z-40 lg:text-[8vw] md:text-[7vw] text-[10vw] md:bottom-16 lg:-bottom-10  font-alinsa text-white floating  ">
                 {name}
             </div>
             <div className="md:hidden relative z-40 bottom-10">
