@@ -29,7 +29,7 @@ const SignUp: React.FC = () => {
   const { signupUser, isLoading } = useRegister();
   const onSubmit = async (data: SignUpForm) => {
     // console.log("inside submit");
-    data.is_ktr_student = false;
+    data.is_ktr_student = true;
     if (data.password !== data.confirmPassword) {
       toast({
         variant: "error",
