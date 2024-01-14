@@ -49,16 +49,16 @@ const AboutMiniMilan = () => {
         <h2 className="text-white font-alinsa text-5xl pt-16 pl-3 w-full md:text-center">EVENT<br/> DETAILS</h2>
         <div className="flex flex-row w-full justify-around mt-8 mb-8 font-unbounded">
             <div className="text-white font-bold text-3xl">
-              <p>TP Ground</p>
-              <p className="text-4xl">VENUE</p>
+              <p className="text-xl">TP Ground</p>
+              <p className="text-3xl">VENUE</p>
             </div>
             <div className="text-white font-bold text-center text-3xl">
-              <p>6pm</p>
-              <p className="text-4xl">TIME</p>
+              <p className="text-xl">6pm</p>
+              <p className="text-3xl">TIME</p>
             </div>
             <div className="text-white font-bold text-3xl">
-              <p>20th Jan</p>
-              <p className="text-4xl">DATE</p>
+              <p className="text-xl">20th Jan</p>
+              <p className="text-3xl">DATE</p>
             </div>
           </div>
                   

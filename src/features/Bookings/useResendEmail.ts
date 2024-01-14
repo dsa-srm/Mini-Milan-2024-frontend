@@ -18,9 +18,10 @@ const useResendEmail = () => {
                     description: "Mail has been resent successfully.",
                 });
 			}
-            
-			return resData; 
-		},
+            console.log(resData);
+			return resData;
+             
+		}, 
 		onError: (error: any) => {
             // Check the specific error message or code
             if (error?.response?.data?.message_code === "EMAIL_LIMIT_EXCEEDED") {
