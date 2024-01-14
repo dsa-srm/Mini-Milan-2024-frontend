@@ -17,8 +17,7 @@ const AboutMiniMilan = () => {
             artists and a sensational DJ.
             <br /> <br /> Mini Milan is not just a standalone event; it's a
             teaser, a sneak peek into the grandeur awaiting at Milan 2024. Get
-            ready 
-             immerse yourself in a night where fun, excitement, and
+            ready to immerse yourself in a night where fun, excitement, and
             sheer entertainment collide, setting the stage for an epic journey
             that transcends the ordinary.
           </p>
@@ -73,8 +72,7 @@ const AboutMiniMilan = () => {
             artists and a sensational DJ.
             <br /> <br /> Mini Milan is not just a standalone event; it's a
             teaser, a sneak peek into the grandeur awaiting at Milan 2024. Get
-            ready 
-             immerse yourself in a night where fun, excitement, and
+            ready to immerse yourself in a night where fun, excitement, and
             sheer entertainment collide, setting the stage for an epic journey
             that transcends the ordinary.
           </p>

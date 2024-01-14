@@ -75,6 +75,7 @@ const Footer = () => {
           />
         </div>
       </div>
+      <div className='mx-auto font-unbounded text-xl'>For Support Contact: <br/> techteam.sa@srmist.edu.in | support@paymenow.co.in  </div>
       <div className='mx-auto font-unbounded text-xl'>2024 | Crafted with ♡ by the Tech Team, Directorate of Student Affairs, SRMIST </div>
     </footer>
   );
