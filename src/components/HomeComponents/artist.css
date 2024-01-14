@@ -5,11 +5,12 @@
     
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .bgsquare {
       background-image: url('/assets/square2.png');
       background-position: center bottom 100px;
       background-repeat: no-repeat;
+      background-size: cover;
       
 
     }

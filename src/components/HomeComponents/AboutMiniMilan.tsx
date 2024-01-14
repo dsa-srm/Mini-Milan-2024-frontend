@@ -44,7 +44,7 @@ const AboutMiniMilan = () => {
         </div>
       </div>
     </section>
-    <section className="flex flex-col lg:hidden h-[80vh] md:h-[60vh] w-[85%] mx-auto rounded-3xl bg-black">
+    <section className="flex flex-col lg:hidden h-fit  md:h-[60vh] w-[85%] mx-auto rounded-3xl bg-black">
       <div className="abgradient m-6 rounded-2xl">
         <h2 className="text-white font-alinsa text-5xl pt-16 pl-3 w-full md:text-center">EVENT<br/> DETAILS</h2>
         <div className="flex flex-row w-full justify-around mt-8 mb-8 font-alinsa">
