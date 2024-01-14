@@ -1,5 +1,5 @@
 .abgradient{
-    background-image: url('../../assets/aboutgradient.png');
+    background-image: url('/assets/aboutgradient.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

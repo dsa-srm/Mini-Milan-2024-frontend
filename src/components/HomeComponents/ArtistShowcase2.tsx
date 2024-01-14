@@ -1,4 +1,4 @@
-import border from '../../assets/rectangle.png'
+import border from '/assets/rectangle.png'
 import './artist.css'
 
 

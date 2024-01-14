@@ -1,7 +1,7 @@
 .dashboardContainer {
     background-color: #130025;
     /* Default background image for small screens */
-    background-image: url("../../assets/dashbg2.png");
+    background-image: url("/assets/dashbg2.png");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;	
@@ -12,7 +12,7 @@
 @media (min-width: 1024px) { /* Adjust to your 'lg' breakpoint */
     .dashboardContainer {
         /* Background image for large screens */
-        background-image: url("../../assets/dashbg.png");
+        background-image: url("/assets/dashbg.png");
 		background-position: center;
 		background-size: cover;	
 		background-repeat: no-repeat;
