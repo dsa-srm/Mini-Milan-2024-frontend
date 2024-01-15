@@ -10,7 +10,7 @@ const useBookTicket = () => {
     onSuccess: (resData) => {
       if (resData && resData.status === 200) {
         // Assuming resData is the full URL
-        window.location.href = resData;
+        window.location.href = resData.result;
       } else if (
         resData &&
         resData.status === 300 &&
