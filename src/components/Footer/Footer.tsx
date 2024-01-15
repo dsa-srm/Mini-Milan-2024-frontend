@@ -1,10 +1,10 @@
 import srmlogo from '/assets/srm.png';
 import navlogo from '/assets/navLogo.png'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import the appropriate React icons
-
+import './Footer.css';
 const Footer = () => {
   return (
-    <footer className=" footer flex items-center p-4 py-16 md:py-24 bg-[#1f112c] text-neutral-content text-center flex-col">
+    <footer className="footerContainer footer flex items-center p-4 py-16 md:py-24 bg-[#1f112c] text-neutral-content text-center flex-col">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
         {/* University Logo */}
         <div className="mb-4 md:mb-0 flex items-center justify-center md:justify-start w-full">
