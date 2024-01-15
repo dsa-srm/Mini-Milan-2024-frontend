@@ -15,8 +15,6 @@ const useBookTicket = () => {
 			}
 		},
 		onError: (error: any) => {
-			console.log(error.response.data.message);
-			console.log(error);
 			// Handle error if needed
 			if (error?.response?.data?.message === "TICKET_SOLD_OUT") {
 				toast({
