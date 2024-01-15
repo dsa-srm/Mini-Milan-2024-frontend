@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="flex space-x-4 justify-center md:justify-center  w-full gap-8 max-md:order-last">
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/your-facebook"
+            href="https://www.facebook.com/SRMUDSA"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-blue-400"
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Twitter */}
           <a
-            href="https://www.twitter.com/your-twitter"
+            href="https://www.youtube.com/@DSAEVENTS"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-red-400"
@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/your-instagram"
+            href="https://www.instagram.com/srmist_dsa/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-pink-400"
