@@ -1,10 +1,10 @@
 import srmlogo from '/assets/srm.png';
 import navlogo from '/assets/navLogo.png'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import the appropriate React icons
-
+import './Footer.css';
 const Footer = () => {
   return (
-    <footer className=" footer flex items-center p-4 py-16 md:py-24 bg-[#1f112c] text-neutral-content text-center flex-col">
+    <footer className="footerContainer footer flex items-center p-4 py-16 md:py-24 bg-[#1f112c] text-neutral-content text-center flex-col">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
         {/* University Logo */}
         <div className="mb-4 md:mb-0 flex items-center justify-center md:justify-start w-full">
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="flex space-x-4 justify-center md:justify-center  w-full gap-8 max-md:order-last">
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/your-facebook"
+            href="https://www.facebook.com/SRMUDSA"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-blue-400"
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Twitter */}
           <a
-            href="https://www.twitter.com/your-twitter"
+            href="https://www.youtube.com/@DSAEVENTS"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-red-400"
@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/your-instagram"
+            href="https://www.instagram.com/srmist_dsa/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-4xl hover:text-pink-400"

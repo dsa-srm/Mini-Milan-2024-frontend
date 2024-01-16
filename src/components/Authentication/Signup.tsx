@@ -53,7 +53,7 @@ const SignUp: React.FC = () => {
   return (
     <div className="flex justify-center items-center bg-[#130025] signupContainer min-h-screen pb-36 ">
       
-      <div className="max-w-full w-[80vw] md:w-4/6 lg:w-3/6 bg-orange-500 rounded-2xl border-4  border-orange-300 shadow-lg md:p-6 space-y-6  relative z-[1] mt-[100px] ">
+      <div className="max-w-full w-[80vw] md:w-4/6 lg:w-3/6 bg-orange-500  border-4  shadow-lg md:p-6 space-y-6  relative z-[1] mt-[100px] ">
         <h2 className="text-4xl pt-[20px] md:text-4xl lg:text-5xl font-bold text-center text-white mb-6 font-['Unbounded',sans-serif]">
           Sign Up
         </h2>

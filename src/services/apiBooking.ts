@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { bookTicketApi, resendEmailApi, ticketsApi } from "@/Api/ApiRoutes";
 
 export interface IRegisterUserObject {
@@ -26,17 +27,23 @@ export async function getTicketCount() {
 }
 
 export async function bookTicket(bodyObj: IRegisterUserObject) {
-	const response = await fetch(bookTicketApi, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(bodyObj),
-	});
-
-	const data = await response.json();
-	const res = data?.result;
-	return res;
+	try {
+		const response = await fetch(bookTicketApi, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(bodyObj),
+		});
+	
+		const data = await response.json();
+		const res = data;
+		return res;
+	} catch (error:any) {
+		throw new Error(error);
+		
+	}
+	
 }
 
 export async function resendEmail(bodyObj: IResendEmailObject) {
