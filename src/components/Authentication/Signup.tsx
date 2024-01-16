@@ -238,9 +238,9 @@ const SignUp: React.FC = () => {
               id="collegename"
               placeholder="Enter Your College Name"
             />
-            {errors.reg_number && (
+            {errors.gender && (
               <p className="text-red-200 text-[1.3rem] mt-[5px]">
-                {errors.reg_number.message}
+                {errors.gender.message}
               </p>
             )}
           </div>
