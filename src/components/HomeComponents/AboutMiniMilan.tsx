@@ -11,7 +11,7 @@ const AboutMiniMilan = () => {
           <h1 className="text-6xl my-24 font-['unbounded','sans-serif']">ABOUT MINI MILAN</h1>
           <p className="w-7/12 text-2xl">
             Get ready to experience a breathtaking night , MINI MILAN
-            exclusively for SRMIST. This cultural extravaganza signifies the
+            . This cultural extravaganza signifies the
             first-ever one night pro-show in SRM's history, promising an
             unforgettable night filled with the pulsating beats of renowned
             artists and a sensational DJ.
