@@ -6,7 +6,7 @@ export const faqs = [
 	{
 		question: "Is there a deadline for buying tickets?",
 		answer:
-			"Yes, the ticketing will close on 11:59 PM on 18th January 2024 (subject to strength of the venue)",
+			"Yes, the ticketing will close on 11:59 PM on 28th January 2024 (subject to strength of the venue)",
 	},
 	{
 		question: "What are the accepted payment methods for registration fees?",
@@ -35,7 +35,7 @@ export const faqs = [
 	{
 		question: "When and where should we collect our offline passes?",
 		answer:
-			"Offline passes would be issued on January 18, 19 and 20th morning, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
+			"Offline passes would be issued on January 28 and 29th morning, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
 	},
 	{
 		question: "What to be done incase the payment is successful and is visible on dashboard,but haven't received mail ?",
