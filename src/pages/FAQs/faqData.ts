@@ -35,7 +35,7 @@ export const faqs = [
 	{
 		question: "When and where should we collect our offline passes?",
 		answer:
-			"Offline passes would be issued on January 28 and 29th morning, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
+			"Offline passes would be issued on January 29 and 30th morning, 2024, and venues would be intimated on the srmist_dsa Instagram page.",
 	},
 	{
 		question: "What to be done incase the payment is successful and is visible on dashboard,but haven't received mail ?",
