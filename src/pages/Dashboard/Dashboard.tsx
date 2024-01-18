@@ -48,26 +48,22 @@ const Dashboard = () => {
               Ticket Issued Successfully!
             </div>
           ) : (
-            
-              // Render the button when ticket_status is not "success"
-              <button
-                onClick={handleBook}
-                className="w-4/6 lg:w-full mx-auto h-[100px] bg-gradient-to-r from-indigo-800 to-indigo-300 font-['unbounded',sans-serif] font-extrabold xl:text-[4rem] lg:text-[3rem] text-4xl mb-10  text-white p-10 rounded-3xl"
-              >
-                {urlLoading || userLoading || emailLoading ? (
-                  <ButtonSpinner />
-                ) : (
-                  "Book Tickets Now !"
-				  
-                )}
-              </button>
-              
-            
+            // Render the button when ticket_status is not "success"
+            <button
+              onClick={handleBook}
+              className="w-4/6 lg:w-full mx-auto h-[100px] bg-gradient-to-r from-indigo-800 to-indigo-300 font-['unbounded',sans-serif] font-extrabold xl:text-[4rem] lg:text-[3rem] text-4xl mb-10  text-white p-10 rounded-3xl"
+            >
+              {urlLoading || userLoading || emailLoading ? (
+                <ButtonSpinner />
+              ) : (
+                "Book Tickets Now !"
+              )}
+            </button>
           )}
-		  <div className="w-4/6 lg:w-full mx-auto text-center text-md text-red-500 mt-2 mb-10 font-unbounded">
-                Disclaimer: Refunds will not be issued for ticket purchases made
-                with incorrect credentials.
-              </div>
+          <div className="w-4/6 lg:w-full mx-auto text-center text-md text-red-500 mt-2 mb-10 font-unbounded">
+            Disclaimer: Refunds will not be issued for ticket purchases made
+            with incorrect credentials.
+          </div>
         </section>
         <section className=" relative  z-[1] max-w-[70%] md:max-w-[50%] flex justify-center items-center w-full max-md:h-[60vh] md:h-5/6 lg:h-[90vh] ">
           <UserDetailsBox />
