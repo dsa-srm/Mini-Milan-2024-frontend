@@ -1,7 +1,7 @@
 export const faqs = [
 	{
 		question: "Can I register multiple attendees under one Mail id?",
-		answer: "No, only one registration can be done under one mail id",
+		answer: "No, only one registration can be done under one mail id, Register number and mobile number",
 	},
 	{
 		question: "Is there a deadline for buying tickets?",
