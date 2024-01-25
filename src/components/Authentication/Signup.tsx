@@ -93,10 +93,10 @@ const SignUp: React.FC = () => {
                 type="email"
                 {...register("email", {
                   required: "SRM Email is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@srmist\.edu\.in$/,
-                    message: "Invalid SRM email address",
-                  },
+                  // pattern: {
+                  //   value: /^[a-zA-Z0-9._%+-]+@srmist\.edu\.in$/,
+                  //   message: "Invalid SRM email address",
+                  // },
                 })}
                 className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800 "
                 id="email"
@@ -234,11 +234,37 @@ const SignUp: React.FC = () => {
               </p>
             )}
           </div>
+          <div className="flex flex-col mx-[20px]">
+            <label
+              className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
+              htmlFor="registrationNumber"
+            >
+              COLLEGE NAME
+            </label>
+            <input
+              type="text"
+              {...register("gender", {
+                required: "College Name is required",
+              
+              })}
+              className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
+              id="registrationNumber"
+              placeholder="Enter Your College Name"
+            />
+            {errors.gender && (
+              <p className="text-red-200 text-[1.3rem] mt-[5px]">
+                {errors.gender.message}
+              </p>
+            )}
+          </div>
 
           {/* Checkbox for SRMKTR Student */}
           
           {/* Gender Field */}
-          <div className="flex flex-col mx-[20px]">
+
+
+
+          {/* <div className="flex flex-col mx-[20px]">
             <label
               className="text-slate-100 text-[1.5rem] md:text-lg lg:text-2xl font-bold mb-2"
               htmlFor="gender"
@@ -268,7 +294,7 @@ const SignUp: React.FC = () => {
                 {errors.gender.message}
               </p>
             )}
-          </div>
+          </div> */}
 
           {/* Submit Button */}
           <div className="flex justify-center mx-[20px]">
