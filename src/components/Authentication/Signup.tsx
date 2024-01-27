@@ -215,14 +215,14 @@ const SignUp: React.FC = () => {
               type="text"
               {...register("reg_number", {
                 required: "Registration number is required",
-                validate: {
-                  length: (value) =>
-                    value.length === 15 ||
-                    "Registration number must be exactly 15 characters long",
-                  startsWithRA: (value) =>
-                    value.startsWith("RA") ||
-                    "Registration number must start with 'RA'",
-                },
+                // validate: {
+                //   length: (value) =>
+                //     value.length === 15 ||
+                //     "Registration number must be exactly 15 characters long",
+                //   startsWithRA: (value) =>
+                //     value.startsWith("RA") ||
+                //     "Registration number must start with 'RA'",
+                // },
               })}
               className="form-input mt-1 block w-full rounded-2xl border-[3px] bg-[#ffe5d9] px-4 border-orange-300  h-[45px] text-[1.8rem]  placeholder:text-grey-700 placeholder:font-normal focus:outline-none text-violet-900 font-semibold placeholder:opacity-50  caret-violet-800"
               id="registrationNumber"
