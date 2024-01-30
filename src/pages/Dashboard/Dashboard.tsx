@@ -51,12 +51,13 @@ const Dashboard = () => {
             // Render the button when ticket_status is not "success"
             <button
               onClick={handleBook}
+              disabled
               className="w-4/6 lg:w-full mx-auto h-[100px] bg-gradient-to-r from-indigo-800 to-indigo-300 font-['unbounded',sans-serif] font-extrabold xl:text-[4rem] lg:text-[3rem] text-4xl mb-10  text-white p-10 rounded-3xl"
             >
               {urlLoading || userLoading || emailLoading ? (
                 <ButtonSpinner />
               ) : (
-                "Book Tickets Now !"
+                "Ticketing Closed"
               )}
             </button>
           )}
